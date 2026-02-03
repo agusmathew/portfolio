@@ -22,6 +22,15 @@ export default function VisitTracker() {
     const sessionId = getSessionId();
     if (!sessionId) return;
 
+    const nav = navigator as Navigator & {
+      connection?: {
+        effectiveType?: string;
+        downlink?: number;
+        rtt?: number;
+        saveData?: boolean;
+      };
+    };
+
     const payload = {
       sessionId,
       path: window.location.pathname,
@@ -36,10 +45,10 @@ export default function VisitTracker() {
       connection:
         "connection" in navigator
           ? {
-              effectiveType: navigator.connection?.effectiveType || null,
-              downlink: navigator.connection?.downlink || null,
-              rtt: navigator.connection?.rtt || null,
-              saveData: navigator.connection?.saveData || null,
+              effectiveType: nav.connection?.effectiveType || null,
+              downlink: nav.connection?.downlink || null,
+              rtt: nav.connection?.rtt || null,
+              saveData: nav.connection?.saveData || null,
             }
           : null,
       viewport: {
