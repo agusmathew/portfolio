@@ -1,4 +1,5 @@
 import Image from "next/image";
+import VisitTracker from "./VisitTracker";
 
 type Experience = {
   company: string;
@@ -203,6 +204,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0b1020] text-slate-100 animated-grid">
+      <VisitTracker />
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-44 right-[-160px] h-[460px] w-[460px] rounded-full bg-[#0ea5e9] opacity-25 blur-3xl" />
@@ -248,6 +250,23 @@ export default function Home() {
               <a className="nav-link hover:text-white" href="#gallery">
                 Gallery
               </a>
+              <a
+                className="nav-link hover:text-white"
+                href="/docs/AgusMathew.pdf"
+                download
+              >
+                <span className="inline-flex items-center gap-2">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
+                  </svg>
+                  CV
+                </span>
+              </a>
             </nav>
           </div>
         </header>
@@ -272,6 +291,23 @@ export default function Home() {
                   className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Contact
+                </a>
+                <a
+                  href="/docs/AgusMathew.pdf"
+                  download
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      className="h-4 w-4"
+                      fill="currentColor"
+                    >
+                      <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
+                    </svg>
+                    Download CV
+                  </span>
                 </a>
                 <a
                   href={profile.linkedin}
@@ -584,17 +620,34 @@ export default function Home() {
                 >
                   StackOverflow
                 </a>
-                <a
-                  className="hover:underline"
-                  href={profile.hackerrank}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  HackerRank
-                </a>
-              </div>
+              <a
+                className="hover:underline"
+                href={profile.hackerrank}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                HackerRank
+              </a>
+              <a
+                className="hover:underline"
+                href="/docs/AgusMathew.pdf"
+                download
+              >
+                <span className="inline-flex items-center gap-2">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                    className="h-4 w-4"
+                    fill="currentColor"
+                  >
+                    <path d="M10 12.5 6.5 9h2.25V3h2.5v6H13.5L10 12.5Zm-5.5 4.5A1.5 1.5 0 0 1 3 15.5v-2h2v1.5h10V13.5h2v2A1.5 1.5 0 0 1 15.5 17h-11Z" />
+                  </svg>
+                  Download CV
+                </span>
+              </a>
             </div>
-          </footer>
+          </div>
+        </footer>
         </main>
       </div>
     </div>
