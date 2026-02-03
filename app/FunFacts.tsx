@@ -120,10 +120,49 @@ export default function FunFacts() {
   }
 
   function moveButton() {
-    const maxX = Math.max(8, window.innerWidth - 180);
-    const maxY = Math.max(8, window.innerHeight - 120);
-    const x = Math.floor(Math.random() * maxX);
-    const y = Math.floor(Math.random() * maxY);
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const btnW = 130;
+    const btnH = 44;
+    const edge = 16;
+    const topSafe = 84;
+    const bottomSafe = 140;
+
+    const zones = [
+      {
+        xMin: edge,
+        xMax: Math.max(edge, Math.floor(w * 0.25) - btnW),
+        yMin: topSafe,
+        yMax: Math.max(topSafe, h - bottomSafe - btnH),
+      },
+      {
+        xMin: Math.max(edge, Math.floor(w * 0.75)),
+        xMax: Math.max(edge, w - btnW - edge),
+        yMin: topSafe,
+        yMax: Math.max(topSafe, h - bottomSafe - btnH),
+      },
+      {
+        xMin: Math.floor(w * 0.25),
+        xMax: Math.max(edge, Math.floor(w * 0.75) - btnW),
+        yMin: topSafe,
+        yMax: Math.max(topSafe, topSafe + 80),
+      },
+      {
+        xMin: Math.floor(w * 0.25),
+        xMax: Math.max(edge, Math.floor(w * 0.75) - btnW),
+        yMin: Math.max(topSafe, h - bottomSafe - btnH),
+        yMax: Math.max(topSafe, h - bottomSafe - btnH),
+      },
+    ];
+
+    const zone = zones[Math.floor(Math.random() * zones.length)];
+    const x = Math.floor(
+      zone.xMin + Math.random() * Math.max(1, zone.xMax - zone.xMin)
+    );
+    const y = Math.floor(
+      zone.yMin + Math.random() * Math.max(1, zone.yMax - zone.yMin)
+    );
+
     setPos({ x, y });
   }
 
@@ -148,30 +187,40 @@ export default function FunFacts() {
           setOpen(true);
           moveButton();
         }}
-        className="fixed z-30 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#22d3ee] text-lg font-bold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.3)] transition hover:opacity-90"
+        className="fixed z-30 inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-4 text-xs font-semibold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.3)] transition hover:opacity-90"
         style={{ left: pos.x, top: pos.y }}
         aria-label="Show a fun fact"
       >
-        ?
+        Click me 🙂
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 px-4"
+          className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-labelledby="funfact-title"
         >
-          <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#0f172a] p-6 shadow-[0_30px_80px_rgba(3,7,18,0.6)]">
-            <div className="flex items-start justify-between gap-4">
+          <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-[#0f172a]/95 p-6 shadow-[0_40px_100px_rgba(3,7,18,0.7)]">
+            <div className="pointer-events-none absolute inset-0">
+              <div className="absolute -top-24 right-[-60px] h-48 w-48 rounded-full bg-[#22d3ee]/20 blur-3xl" />
+              <div className="absolute -bottom-24 left-[-40px] h-44 w-44 rounded-full bg-[#38bdf8]/20 blur-3xl" />
+            </div>
+
+            <div className="relative flex items-start justify-between gap-4">
               <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.3em] text-slate-300">
+                  Fun fact
+                </div>
                 <h2
                   id="funfact-title"
-                  className="text-lg font-semibold text-white"
+                  className="mt-4 text-xl font-semibold text-white"
                 >
-                  Fun fact
+                  Did you know?
                 </h2>
-                <p className="mt-2 text-sm text-slate-300">{fact}</p>
+                <p className="mt-3 text-sm leading-7 text-slate-200">
+                  {fact}
+                </p>
               </div>
               <button
                 type="button"
@@ -182,18 +231,18 @@ export default function FunFacts() {
                 ✕
               </button>
             </div>
-            <div className="mt-5 flex gap-3">
+            <div className="relative mt-6 flex flex-wrap gap-3">
               <button
                 type="button"
                 onClick={randomFact}
-                className="inline-flex h-10 items-center justify-center rounded-full bg-[#22d3ee] px-5 text-xs font-semibold text-[#0b1020] transition hover:opacity-90"
+                className="inline-flex h-10 items-center justify-center rounded-full bg-[#22d3ee] px-5 text-xs font-semibold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
               >
                 Another one
               </button>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 text-xs font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex h-10 items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
               >
                 Close
               </button>
