@@ -250,15 +250,21 @@ export default function Home() {
               <a className="nav-link hover:text-white" href="#gallery">
                 Gallery
               </a>
-              <div className="nav-dropdown">
+              <div className="group relative">
                 <a className="nav-link hover:text-white" href="/play/runner">
                   Play
                 </a>
-                <div className="nav-dropdown-menu">
-                  <a className="nav-dropdown-item" href="/play/runner">
+                <div className="invisible absolute left-0 top-[calc(100%+10px)] z-20 min-w-[180px] translate-y-[-6px] rounded-[14px] border border-white/10 bg-[#0f172a]/95 p-2 opacity-0 shadow-[0_20px_50px_rgba(3,7,18,0.45)] backdrop-blur transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                  <a
+                    className="flex items-center gap-2 rounded-[10px] px-3 py-2 text-sm text-slate-200 transition hover:bg-white/10 hover:text-white"
+                    href="/play/runner"
+                  >
                     Mini Runner
                   </a>
-                  <a className="nav-dropdown-item" href="/play/memory">
+                  <a
+                    className="flex items-center gap-2 rounded-[10px] px-3 py-2 text-sm text-slate-200 transition hover:bg-white/10 hover:text-white"
+                    href="/play/memory"
+                  >
                     Memory Flip
                   </a>
                 </div>
