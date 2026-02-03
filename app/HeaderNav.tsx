@@ -66,6 +66,12 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
               >
                 Memory Flip
               </a>
+              <a
+                className="flex items-center gap-2 rounded-[10px] px-3 py-2 text-sm text-slate-200 transition hover:bg-white/10 hover:text-white"
+                href="/play/math"
+              >
+                Math Dash
+              </a>
             </div>
           </div>
           <a className="nav-link hover:text-white" href="/docs/AgusMathew.pdf" download>
@@ -130,6 +136,9 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
             </a>
             <a className="hover:text-white" href="/play/memory">
               Memory Flip
+            </a>
+            <a className="hover:text-white" href="/play/math">
+              Math Dash
             </a>
             <a className="hover:text-white" href="/docs/AgusMathew.pdf" download>
               Download CV
