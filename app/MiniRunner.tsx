@@ -22,6 +22,8 @@ export default function MiniRunner() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const context = ctx;
+
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const logicalWidth = 640;
     const logicalHeight = 220;
@@ -29,7 +31,7 @@ export default function MiniRunner() {
     canvas.height = logicalHeight * dpr;
     canvas.style.width = `${logicalWidth}px`;
     canvas.style.height = `${logicalHeight}px`;
-    ctx.scale(dpr, dpr);
+    context.scale(dpr, dpr);
 
     const groundY = 170;
     const player = {
@@ -143,21 +145,26 @@ export default function MiniRunner() {
       distance += speed * dt;
       setScore(Math.floor(distance / 10));
 
-      ctx.clearRect(0, 0, logicalWidth, logicalHeight);
-      ctx.fillStyle = "rgba(15, 23, 42, 0.8)";
-      ctx.fillRect(0, 0, logicalWidth, logicalHeight);
+      context.clearRect(0, 0, logicalWidth, logicalHeight);
+      context.fillStyle = "rgba(15, 23, 42, 0.8)";
+      context.fillRect(0, 0, logicalWidth, logicalHeight);
 
-      ctx.fillStyle = "rgba(148, 163, 184, 0.35)";
-      ctx.fillRect(0, groundY + 14, logicalWidth, 2);
+      context.fillStyle = "rgba(148, 163, 184, 0.35)";
+      context.fillRect(0, groundY + 14, logicalWidth, 2);
 
-      ctx.fillStyle = "#22d3ee";
-      ctx.beginPath();
-      ctx.arc(player.x, player.y, player.r, 0, Math.PI * 2);
-      ctx.fill();
+      context.fillStyle = "#22d3ee";
+      context.beginPath();
+      context.arc(player.x, player.y, player.r, 0, Math.PI * 2);
+      context.fill();
 
-      ctx.fillStyle = "#38bdf8";
+      context.fillStyle = "#38bdf8";
       for (const obs of obstacles) {
-        ctx.fillRect(obs.x, groundY - obs.height, obs.width, obs.height);
+        context.fillRect(
+          obs.x,
+          groundY - obs.height,
+          obs.width,
+          obs.height
+        );
       }
 
       frameRef.current = requestAnimationFrame(loop);
