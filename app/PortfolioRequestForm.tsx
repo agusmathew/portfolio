@@ -57,7 +57,7 @@ export default function PortfolioRequestForm() {
       onSubmit={submit}
       className="mt-4 grid gap-3 text-sm text-slate-300"
     >
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2">
         <label className="grid gap-2">
           <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
             Name
@@ -66,7 +66,7 @@ export default function PortfolioRequestForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="h-11 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
+            className="h-11 w-full rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
             placeholder="Your name"
           />
         </label>
@@ -79,7 +79,7 @@ export default function PortfolioRequestForm() {
             onChange={(e) => setEmail(e.target.value)}
             required
             type="email"
-            className="h-11 rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
+            className="h-11 w-full rounded-full border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
             placeholder="you@email.com"
           />
         </label>
@@ -101,7 +101,7 @@ export default function PortfolioRequestForm() {
               setPreviewUrl(null);
             }
           }}
-          className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white"
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white"
           required
         />
       </label>
@@ -127,6 +127,11 @@ export default function PortfolioRequestForm() {
               Remove
             </button>
           </div>
+          {file && (
+            <div className="mt-3 break-all text-[11px] text-slate-400 sm:text-xs">
+              {file.name}
+            </div>
+          )}
           {previewUrl && (
             <div className="mt-3 overflow-hidden rounded-xl border border-white/10">
               <iframe
@@ -146,7 +151,7 @@ export default function PortfolioRequestForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           rows={3}
-          className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
+          className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition focus:border-[#22d3ee] focus:ring-2 focus:ring-[#22d3ee]/40"
           placeholder="Tell me about your goals..."
         />
       </label>
