@@ -49,6 +49,9 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
           <a className="nav-link hover:text-white" href="#gallery">
             Gallery
           </a>
+          <a className="nav-link hover:text-white" href="#portfolio-request">
+            Want a professional portfolio?
+          </a>
           <div className="group relative">
             <a className="nav-link hover:text-white" href="/play/runner">
               Play
@@ -127,6 +130,9 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
             </a>
             <a className="hover:text-white" href="#gallery">
               Gallery
+            </a>
+            <a className="hover:text-white" href="#portfolio-request">
+              Want a professional portfolio?
             </a>
             <div className="pt-2 text-xs uppercase tracking-[0.3em] text-slate-400">
               Play

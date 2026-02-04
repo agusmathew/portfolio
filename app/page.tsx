@@ -6,6 +6,7 @@ import ScrollProgress from "./ScrollProgress";
 import FunFacts from "./FunFacts";
 import CursorGlow from "./CursorGlow";
 import RevealOnScroll from "./RevealOnScroll";
+import PortfolioRequestForm from "./PortfolioRequestForm";
 
 type Experience = {
   company: string;
@@ -732,7 +733,36 @@ export default function Home() {
           </section>
 
           <footer className="mt-20 border-t border-white/10 pt-8 text-sm text-slate-400">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div
+              id="portfolio-request"
+              className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0f172a]/90 p-6 shadow-[0_20px_60px_rgba(3,7,18,0.45)] backdrop-blur"
+            >
+              <div className="pointer-events-none absolute inset-0">
+                <div className="absolute -top-24 right-[-60px] h-44 w-44 rounded-full bg-[#22d3ee]/20 blur-3xl" />
+                <div className="absolute -bottom-24 left-[-40px] h-40 w-40 rounded-full bg-[#38bdf8]/20 blur-3xl" />
+              </div>
+              <div className="relative grid gap-6 md:grid-cols-[1.05fr_1.95fr] md:items-start">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.3em] text-slate-300">
+                    Portfolio build
+                  </div>
+                  <h3 className="mt-4 text-2xl font-semibold text-white">
+                    Want a portfolio like this?
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-300">
+                    Upload your CV and I’ll review it and get back to you.
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-200">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
+                    Typical response time: 24–48 hours.
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  <PortfolioRequestForm />
+                </div>
+              </div>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p>
                 © {new Date().getFullYear()} {profile.name}
               </p>
