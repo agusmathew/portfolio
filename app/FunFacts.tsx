@@ -126,7 +126,7 @@ export default function FunFacts() {
     const btnH = 44;
     const edge = 16;
     const topSafe = 84;
-    const bottomSafe = 140;
+    const bottomSafe = window.innerWidth < 640 ? 200 : 140;
 
     const zones = [
       {

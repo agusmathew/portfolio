@@ -154,7 +154,7 @@ export default function PortfolioRequestForm() {
         <button
           type="submit"
           disabled={loading}
-          className="inline-flex h-11 items-center justify-center rounded-full bg-[#22d3ee] px-6 text-sm font-semibold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[#22d3ee] px-6 text-sm font-semibold text-[#0b1020] shadow-[0_10px_24px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90 sm:w-auto"
         >
           {loading ? "Uploading..." : "Request a portfolio"}
         </button>

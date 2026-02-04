@@ -314,7 +314,7 @@ export default function Home() {
 
         <main
           id="top"
-          className="mx-auto w-full max-w-6xl px-6 py-16 pb-28 sm:pb-16"
+          className="mx-auto w-full max-w-6xl px-6 py-16 pb-32 sm:pb-16"
         >
           {/* Hero */}
           <section className="reveal grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -329,10 +329,10 @@ export default function Home() {
               <p className="fade-up delay-2 max-w-2xl text-lg leading-8 text-slate-300">
                 {overview}
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 sm:items-center">
                 <a
                   href="#contact"
-                  className="cta-shimmer inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+                  className="cta-shimmer inline-flex h-12 w-full items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90 sm:w-auto"
                 >
                   Contact
                 </a>
@@ -340,7 +340,7 @@ export default function Home() {
                   href="https://calendar.app.google/oD2XbxUEPfGrycF46"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -358,7 +358,7 @@ export default function Home() {
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -376,7 +376,7 @@ export default function Home() {
                   href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -623,7 +623,7 @@ export default function Home() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#22d3ee] px-7 text-sm font-semibold text-[#0b1020] shadow-[0_12px_30px_rgba(34,211,238,0.35)] transition hover:-translate-y-0.5 hover:opacity-90 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -641,7 +641,7 @@ export default function Home() {
                   href="https://calendar.app.google/oD2XbxUEPfGrycF46"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -659,7 +659,7 @@ export default function Home() {
                   href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
@@ -677,7 +677,7 @@ export default function Home() {
                   href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+                  className="inline-flex h-12 w-full items-center justify-center rounded-full border border-white/10 bg-white/5 px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
                 >
                   <span className="inline-flex items-center gap-2">
                     <svg
