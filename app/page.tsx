@@ -747,10 +747,10 @@ export default function Home() {
                     Portfolio build
                   </div>
                   <h3 className="mt-4 text-2xl font-semibold text-white">
-                    Want a portfolio like this?
+                    Want a professional portfolio?
                   </h3>
                   <p className="mt-2 text-sm text-slate-300">
-                    Upload your CV and I’ll review it and get back to you.
+                    Upload your CV and I’ll get back to you.
                   </p>
                   <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs text-emerald-200">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
