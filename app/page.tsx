@@ -45,7 +45,7 @@ export default function Home() {
     },
     {
       title: "Academic",
-      description: "Top 21% in GATE 2017 (All India Rank 5349 of 108,495).",
+      description: "Top 5% in GATE 2017 (All India Rank 5349 of 108,495).",
     },
   ];
 

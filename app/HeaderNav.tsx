@@ -54,7 +54,7 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
           </a>
           <div className="group relative">
             <a className="nav-link hover:text-white" href="/play/runner">
-              Play
+              Games
             </a>
             <div className="invisible absolute left-0 top-[calc(100%+10px)] z-20 min-w-[180px] translate-y-[-6px] rounded-[14px] border border-white/10 bg-[#0f172a]/95 p-2 opacity-0 shadow-[0_20px_50px_rgba(3,7,18,0.45)] backdrop-blur transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
               <a
@@ -77,7 +77,11 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
               </a>
             </div>
           </div>
-          <a className="nav-link hover:text-white" href="/docs/AgusMathew.pdf" download>
+          <a
+            className="nav-link hover:text-white"
+            href="/docs/AgusMathew.pdf"
+            download
+          >
             <span className="inline-flex items-center gap-2">
               <svg
                 aria-hidden="true"
@@ -135,7 +139,7 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
               Want a professional portfolio?
             </a>
             <div className="pt-2 text-xs uppercase tracking-[0.3em] text-slate-400">
-              Play
+              Games
             </div>
             <a className="hover:text-white" href="/play/runner">
               Mini Runner
@@ -146,7 +150,11 @@ export default function HeaderNav({ name, role }: HeaderNavProps) {
             <a className="hover:text-white" href="/play/math">
               Math Dash
             </a>
-            <a className="hover:text-white" href="/docs/AgusMathew.pdf" download>
+            <a
+              className="hover:text-white"
+              href="/docs/AgusMathew.pdf"
+              download
+            >
               Download CV
             </a>
           </div>
